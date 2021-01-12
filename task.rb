@@ -50,7 +50,7 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  p numbers2 = numbers1.map{|x| x * 10}
+  p numbers2 = numbers1.map{|number| number * 10}
 end
 
 def q7
@@ -66,8 +66,6 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  upper_case_programming_languages = %w(ruby php python javascript)
-
   programming_languages.map(&:capitalize!)
 
   upper_case_programming_languages = programming_languages.map(&:upcase)
@@ -103,7 +101,12 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
+  puts "ユーザーの趣味一覧"
 
+  sports.flatten!.uniq!
+  sports.each.with_index(1) do |sport, i|
+    puts "No#{i} #{sport}"
+  end
 end
 
 def q12
